@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class ObjectController : MonoBehaviour
@@ -9,6 +10,7 @@ public class ObjectController : MonoBehaviour
     private bool isDragging = false;
     private Vector3 startPos;
     private Vector3 startRot;
+    Tween display;
 
     public void Init()
     {
@@ -85,5 +87,18 @@ public class ObjectController : MonoBehaviour
     public void SetAnimator(bool set)
     {
         animator.enabled = set;
+    }
+
+    public void RotateObject(bool set)
+    {
+        if (set)
+        {
+            display = gameObject.transform.DOLocalRotate(
+               new Vector3(0, 180, 360), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
+        }
+        else
+        {
+            display.Kill();
+        }
     }
 }

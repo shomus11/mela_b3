@@ -89,8 +89,9 @@ public class UIManager : MonoBehaviour
                 objectController.animator.Play("Pipet_Open");
                 break;
             case 2:
-                objectController.SetAnimator(true);
-                objectController.animator.Play("Auto_Rotate");
+                objectController.SetPosition();
+                objectController.RotateObject(true);
+                //objectController.animator.Play("Auto_Rotate");
                 break;
             case 3:
                 Application.Quit();
@@ -109,6 +110,7 @@ public class UIManager : MonoBehaviour
                 objectController.animator.Play("Pipet_Closed");
                 break;
             case 2:
+                objectController.RotateObject(false);
                 break;
         }
     }
