@@ -1137,7 +1137,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1440250.4
-  m_Range: 22.72
+  m_Range: 25.72
   m_SpotAngle: 80.158066
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2558,8 +2558,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.5100002, z: 5}
-  m_LocalScale: {x: 5.14, y: 5.14, z: 5.14}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5.14, y: 5.14, z: 9.27}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 501178085}
   m_Father: {fileID: 0}
@@ -2833,8 +2833,8 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 59848200
-  m_Range: 40.12
+  m_Intensity: 94047170
+  m_Range: 43.12
   m_SpotAngle: 149.02747
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -3210,7 +3210,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1405616.1
-  m_Range: 22.72
+  m_Range: 25.72
   m_SpotAngle: 80.158066
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
