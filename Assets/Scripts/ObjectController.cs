@@ -104,8 +104,8 @@ public class ObjectController : MonoBehaviour
             float totalAnimationDuration = 0;
             display.Insert(0, gameObject.transform.DOLocalRotate(
                new Vector3(0, 180, 360), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1));
-            display.Insert(0, gameObject.transform.DOLocalMoveZ(startPos.z - 1, baseAnimationDuration * 24).From(startPos.z + 3).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear));
-            display.Insert(0, gameObject.transform.DOScale(Vector3.one * .75f, baseAnimationDuration * 24).From(Vector3.one * .25f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear));
+            display.Insert(0, gameObject.transform.DOLocalMoveZ(startPos.z - 1, baseAnimationDuration * 24).From(startPos.z + 9).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear));
+            display.Insert(0, gameObject.transform.DOScale(Vector3.one * .75f, baseAnimationDuration * 24).From(Vector3.one * .5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear));
         }
         else
         {
