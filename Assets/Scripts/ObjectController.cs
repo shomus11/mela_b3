@@ -10,8 +10,12 @@ public class ObjectController : MonoBehaviour
     private bool isDragging = false;
     private Vector3 startPos;
     private Vector3 startRot;
-    Tween display;
+    Sequence display;
+    float baseAnimationDuration = .25f;
+    private void Start()
+    {
 
+    }
     public void Init()
     {
         startPos = gameObject.transform.position;
@@ -91,10 +95,14 @@ public class ObjectController : MonoBehaviour
 
     public void RotateObject(bool set)
     {
+
         if (set)
         {
-            display = gameObject.transform.DOLocalRotate(
-               new Vector3(0, 180, 360), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
+            display = DOTween.Sequence();
+            float totalAnimationDuration = 0;
+            display.Insert(0, gameObject.transform.DOLocalRotate(
+               new Vector3(0, 180, 360), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1));
+            display.Insert(0, gameObject.transform.DOLocalMoveZ(startPos.z - 4, baseAnimationDuration * 10).From(startPos.z + 3).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear));
         }
         else
         {
