@@ -20,12 +20,14 @@ public class ObjectController : MonoBehaviour
     {
         startPos = gameObject.transform.position;
         startRot = gameObject.transform.rotation.eulerAngles;
+        gameObject.transform.DOScale(0.75f, 0);
     }
 
     public void SetPosition()
     {
         gameObject.transform.position = startPos;
         gameObject.transform.rotation = Quaternion.Euler(startRot);
+        gameObject.transform.DOScale(0.75f, 0);
     }
     void Update()
     {
@@ -102,7 +104,8 @@ public class ObjectController : MonoBehaviour
             float totalAnimationDuration = 0;
             display.Insert(0, gameObject.transform.DOLocalRotate(
                new Vector3(0, 180, 360), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1));
-            display.Insert(0, gameObject.transform.DOLocalMoveZ(startPos.z - 4, baseAnimationDuration * 10).From(startPos.z + 3).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear));
+            display.Insert(0, gameObject.transform.DOLocalMoveZ(startPos.z - 1, baseAnimationDuration * 24).From(startPos.z + 3).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear));
+            display.Insert(0, gameObject.transform.DOScale(Vector3.one * .75f, baseAnimationDuration * 24).From(Vector3.one * .25f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear));
         }
         else
         {
