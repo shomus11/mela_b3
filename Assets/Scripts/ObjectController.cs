@@ -11,7 +11,7 @@ public class ObjectController : MonoBehaviour
     private Vector3 startPos;
     private Vector3 startRot;
     Tween display;
-
+    float baseAnimationDuration = .25f;
     public void Init()
     {
         startPos = gameObject.transform.position;
@@ -93,8 +93,9 @@ public class ObjectController : MonoBehaviour
     {
         if (set)
         {
-            display = gameObject.transform.DOLocalRotate(
-               new Vector3(0, 180, 360), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
+            display = gameObject.transform.DOLocalMoveZ(startPos.z - 5, baseAnimationDuration * 24).From(startPos.z + 20f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+            //display = gameObject.transform.DOLocalRotate(
+            //   new Vector3(0, 180, 360), 2f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
         }
         else
         {
